@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test App Pixabay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">
+              Find your perfect free image or video to download and use for
+              anything. ✓ Free for commercial use ✓ No attribution required ✓
+              High quality images.
+            </p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://twitter.com/" target="_blank" class="text-white">Follow on Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/" target="_blank" class="text-white">Like on Facebook</a>
+              </li>
+              <li>
+                <a href="mailto:anxhelo.beqa5@gmail.com" target="_blank" class="text-white">Email me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect width="48" height="48" rx="4" fill="#191B26" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M32.6525 24.8892L37.2639 30.7912H42.3448L34.8157 21.5238L41.7076 12.6792H36.9286L32.7029 18.2093L28.9132 12.6792H24.1006L30.4391 21.5238L23.5472 30.7912H28.5107L32.6525 24.8892ZM14.3852 12.6881C11.8443 12.7519 9.73311 13.6319 8.05141 15.3278C6.36972 17.0238 5.4972 19.1531 5.43396 21.7155V38.0377H8.99046V30.7836H14.3852C16.9277 30.7181 19.0457 29.8314 20.739 28.1237C22.4324 26.4159 23.3115 24.28 23.3765 21.7158C23.3116 19.1533 22.4324 17.0241 20.739 15.3281C19.0457 13.6321 16.9278 12.7523 14.3852 12.6884V12.6881ZM8.99046 27.1964V21.7155C9.02796 20.1664 9.55241 18.8819 10.5639 17.8617C11.5754 16.8416 12.8492 16.3127 14.3852 16.2749C15.9403 16.3127 17.2258 16.8416 18.2415 17.8617C19.2571 18.8818 19.7833 20.1664 19.8199 21.7155C19.7833 23.2839 19.2571 24.5802 18.2415 25.6046C17.2258 26.629 15.9403 27.1596 14.3852 27.1964H8.99046Z"
+              fill="white" />
+          </svg>
+          <!-- <strong>Album</strong> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="s010">
+        <form>
+          <div class="inner-form">
+            <div class="basic-search">
+              <div class="input-field">
+                <input id="search" type="text" placeholder="Type Keywords" />
+                <div class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="advance-search">
+              <span class="desc">ADVANCED SEARCH</span>
+              <div class="row advanced-search-selectboxes"></div>
+
+              <div class="row third">
+                <div class="input-field">
+                  <div class="result-count">
+                    <span class="results-count-value"> </span>results
+                  </div>
+                  <div class="group-btn">
+                    <button type="button" onClick="reset()" class="btn-delete" id="delete">
+                      RESET
+                    </button>
+                    <button type="button" onCLick="onSearch()" class="btn-search">
+                      SEARCH
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row photo-container"></div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center"></ul>
+    </nav>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Copyright &copy; Anxhelo Beqa 2020</p>
+    </div>
+  </footer>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img src="" class="large-image" />
+      </div>
+    </div>
+  </div>
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="js/extention/choices.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
